@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        setSupportActionBar(toolbar)
     }
 
     fun changeFragment(f: Fragment, cleanStack: Boolean = false){
