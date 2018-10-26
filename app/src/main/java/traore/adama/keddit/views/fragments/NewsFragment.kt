@@ -1,4 +1,4 @@
-package traore.adama.keddit.fragments
+package traore.adama.keddit.views.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

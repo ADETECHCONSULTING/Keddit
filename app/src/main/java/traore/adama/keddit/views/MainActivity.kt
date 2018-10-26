@@ -1,14 +1,11 @@
-package traore.adama.keddit
+package traore.adama.keddit.views
 
-import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
-import android.util.Log
-import android.widget.TextView
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import traore.adama.keddit.R
 
 class MainActivity : AppCompatActivity() {
 
