@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import kotlinx.android.synthetic.main.activity_main.*
 import traore.adama.keddit.R
+import traore.adama.keddit.views.fragments.NewsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,22 +15,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
+
+        changeFragment(NewsFragment())
     }
 
-    fun changeFragment(f: Fragment, cleanStack: Boolean = false){
+    fun changeFragment(f: Fragment, cleanStack: Boolean = false) {
         val ft = supportFragmentManager.beginTransaction()
-        if(cleanStack)
+        if (cleanStack)
             clearBackStack()
 
-        ft.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out, R.anim.abc_popup_enter, R.anim.abc_popup_exit)
+        ft.setCustomAnimations(
+            R.anim.abc_fade_in,
+            R.anim.abc_fade_out,
+            R.anim.abc_popup_enter,
+            R.anim.abc_popup_exit
+        )
         ft.replace(R.id.activity_base_content, f)
         ft.addToBackStack(null)
         ft.commit()
     }
 
-    fun clearBackStack(){
+    fun clearBackStack() {
         val manager = supportFragmentManager
-        if(manager.backStackEntryCount > 0){
+        if (manager.backStackEntryCount > 0) {
             val first = manager.getBackStackEntryAt(0)
             manager.popBackStack(first.id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         }
